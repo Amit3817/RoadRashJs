@@ -1,0 +1,22 @@
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(95, 189, 95);
+    
+    }
+     .road{
+        height: 10000vh;
+        width: 100vw;
+        background-image: url("images/road.jpeg");
+        background-repeat: repeat-y;
+        /* background-size: cover; */
+         position: absolute;
+        bottom: 0vh;
+        left: 15vw;
+        animation: road linear 3s infinite;
+    } 
+    @keyframes road {
+        100%{
+            transform: translateY(100vh);
+    }
