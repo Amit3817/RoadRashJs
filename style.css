@@ -8,23 +8,30 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-color: rgb(95, 189, 95);
+background-color: rgb(36, 37, 38);
+    
 }
-
+#ab{
+    width: 10000vw;
+height: 100000vh;
+background-color: rgb(36, 37, 38);
+}
 .road {
     height: 10000vh;
     width: 100vw;
-    background-image: url("./img/road.jpeg");
+    background-image: url("./img/background.jpg");
+    /* background-color: red; */
     background-repeat: repeat-y;
-    /* background-size: cover; */
+    background-size: contain;
     position: absolute;
     bottom: 0vh;
-    animation: road linear 3s infinite;
+    /* left: 10px; */
+    animation: road linear 100s infinite;
 }
 
 @keyframes road {
     100% {
-        transform: translateY(100vh);
+        transform: translateY(5000vh);
     }
 }
 
@@ -48,8 +55,8 @@ body {
 
 #bike-1 {
     position: absolute;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     background-image: url('./img/bike1.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -59,15 +66,23 @@ body {
 
 #bike-2 {
     position: absolute;
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     background-image: url('./img/bike2.png');
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 30px;
     right: 35%;
 }
-
+#test{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 40px;
+    background-color: aqua;
+    right: 34px;
+    z-index: 121212;
+}
 .car {
     position: absolute;
     width: 110px;
@@ -79,31 +94,16 @@ body {
     right: 52%;
 }
 
-#speedometer {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border-radius: 50%;
-}
 
-/* left: 340px; */
-/* left: 640px; */
-#speed {
-    color: white;
-    font-size: 1rem;
-    background-color: green;
-    width: 500px;
-    height: 500px;
-}
 #dis{
     height: 100px;
-    width: 100px;
+    width: 140px;
     position: absolute;
     /* background-color: red; */
-    right: 10px;
-    font-size: 2rem;
+    right: 40%;
+    top: 4px;
+    font-size: 2.1rem;
     color: white;
+    z-index: 100;
+font-family: 'Press Start 2P', cursive;
 }
