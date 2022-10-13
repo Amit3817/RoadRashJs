@@ -4,7 +4,9 @@ var bike1speed = 100
 var bike2speed = 90
 var bike3speed = 85
 var bike4speed = 65
+var isGameover = 1
 var e = 0
+var pos = 0
 var bikeright = parseInt(window.getComputedStyle(bike).getPropertyValue("right"))
 var screen = document.getElementById('screen')
 var bike1 = document.getElementById('bike-1')
@@ -23,14 +25,18 @@ var checkcollision = setInterval(() => {
 }, 10);
 document.onkeydown = function (e) {
     if (e.keyCode == 39) {
-        bikeright -= 20;
-        bike.style.right = bikeright + "px"
+        if (bikeright > 350) {
+            bikeright -= 20;
+            bike.style.right = bikeright + "px"
+        }
         var imgsrc = document.getElementById('bike')
         imgsrc.style.transform = "rotate(20deg)"
     }
     else if (e.keyCode == 37) {
-        bikeright += 10;
-        bike.style.right = bikeright + "px"
+        if (bikeright < 590) {
+            bikeright += 10;
+            bike.style.right = bikeright + "px"
+        }
         var imgsrc = document.getElementById('bike')
         // imgsrc.style.backgroundImage = "url(./img/mainbikeleft.png)"
         imgsrc.style.transform = "rotate(-20deg)"
@@ -85,25 +91,31 @@ function addcar() {
         var car = document.createElement("div");
         car.classList.add("car")
         car.style.left = 350 + "px"
+        pos = 1;
     }
     else if (randomno <= 0.5) {
         var car = document.createElement("div");
         car.classList.add("car")
         car.style.left = 420 + "px"
+        pos = 2;
     }
     else if (randomno <= 0.75) {
         var car = document.createElement("div");
         car.classList.add("car")
         car.style.left = 490 + "px"
+        pos = 3;
     }
     else {
         var car = document.createElement("div");
         car.classList.add("car")
         car.style.left = 560 + "px"
+        pos = 4;
     }
     screen.appendChild(car)
+    if(isGameover)
     setTimeout(addcar, 2500 - 30 * bikespeed);
 };
+if(isGameover)
 addcar();
 var movecars = setInterval(() => {
     var cars = document.getElementsByClassName("car");
@@ -116,16 +128,44 @@ var movecars = setInterval(() => {
         var bikeright = parseInt(window.getComputedStyle(bike).getPropertyValue("right"))
         car.style.top = cartop + (1 + parseInt(bikespeed / 4)) + "px"
         var biketop = parseInt(window.getComputedStyle(bike).getPropertyValue("top"));
-        if ((carbtm >145&&carbtm<155)&&((Math.abs(carright - bikeright))>10)&&((Math.abs(carright - bikeright))<70)) {
-                e++;
-                var ii = document.getElementById("test")
-            ii.innerHTML = (e) + bikeright;
-        }
-        // console.log(bikeright);
+        // if ((carbtm >145&&carbtm<155)&&((Math.abs(carright - bikeright))>10)&&((Math.abs(carright - bikeright))<70)) {
+        //         e++;
+        //         var ii = document.getElementById("test")
+        //     ii.innerHTML = (e);
+        // }
+        console.log(bikeright);
         // console.log(carright);
+        // console.log(car.style.top);
+        // bike.style.right = 380+"px"
+        if ((carbtm > 45 && carbtm < 90) && (car.style.left == "350px")&&(bikeright>550&&bikeright<590)) {
+            // console.log(car.style.bottom);
+            e++;
+            var ii = document.getElementById("test")
+            ii.innerHTML = (e);
+            isGameover = 0;
+        }
+        else if ((carbtm > 45 && carbtm < 90) && (car.style.left == "420px")&&(bikeright>490&&bikeright<530) ) {
+            // console.log(car.style.bottom);
+            e++;
+            var ii = document.getElementById("test")
+            ii.innerHTML = (e);
+            isGameover = 0;
+        }
+        else if ((carbtm >45 && carbtm < 90) && (car.style.left == "490px")&&(bikeright>400&&bikeright<450)) {
+            console.log(car.style.left);
+            e++;
+            var ii = document.getElementById("test")
+            ii.innerHTML = (e);
+            isGameover = 0;
+        }
+        else if ((carbtm > 45 && carbtm < 90) && (car.style.left == "560px")&&(bikeright>320&&bikeright<390)) {
+            console.log(car.style.left);
+            e++;
+            var ii = document.getElementById("test")
+            ii.innerHTML = (e);
+            isGameover = 0;
+        }
     }
-    // console.log(carright);
-    // }
 }, 5);
 var movebike1vertical = setInterval(() => {
     var bike1 = document.getElementById('bike-1')
@@ -196,6 +236,21 @@ var test = setInterval(() => {
     else
         isClose = false
 }, 10);
+setInterval(() => {
+    if (!isGameover) {
+        var yu = document.getElementsByClassName("board");
+        yu[0].style.display = "block";
+        console.log("ergdfgsdfg");
+        var iu = document.getElementsByClassName("gameover");
+        iu[0].style.display = "block"
+    }
+}, 2);
+
+
+setInterval(() => {
+    var op = document.getElementsByClassName("road")
+op.style.animationDuration = "1s"
+}, 2000);
 
 
 

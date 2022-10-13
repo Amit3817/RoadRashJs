@@ -11,11 +11,6 @@ body {
     justify-content: center;
     background-color: rgb(36, 37, 38);
 }
-#ab{
-    width: 10000vw;
-height: 100000vh;
-background-color: rgb(36, 37, 38);
-}
 .road {
     height: 10000vh;
     width: 100vw;
@@ -35,7 +30,26 @@ background-color: rgb(36, 37, 38);
         transform: translateY(5000vh);
     }
 }
-
+.gameover{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    /* background-color: red; */
+    z-index: 8998989;
+    right: 43%;
+    top: 25%;
+    display: none;
+    font-size: 3rem;
+    color: red;
+}
+.board{
+    background-color: rgb(36, 37, 38);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999999;
+    position: absolute;
+    display: none;
+}
 #screen {
     /* background-color: red; */
     width: 100vw;
@@ -80,13 +94,13 @@ background-color: rgb(36, 37, 38);
     width: 100px;
     height: 100px;
     bottom: 40px;
-    background-color: aqua;
+    background-color: white;
     right: 34px;
     z-index: 121212;
 }
 .car {
     position: absolute;
-    width: 110px;
+    width: 130px;
     height: 110px;
     background-image: url('./img/car.png');
     background-size: contain;
