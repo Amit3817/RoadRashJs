@@ -9,21 +9,20 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-color: rgb(36, 37, 38);
+    background-color: #242526;
 }
 #road {
     height: 10000vh;
     width: 100vw;
-    background-image: url("./img/background.jpg");
-    /* background-color: red; */
+    background-image: url("./img/background2.jpg");
     background-repeat: repeat-y;
     background-size: contain;
     position: absolute;
     bottom: 0vh;
-    /* left: 10px; */
     animation: road linear 100s infinite;
     left: 0px;
 }
+
 
 @keyframes road {
     100% {
@@ -105,14 +104,15 @@ body {
 }
 .car {
     position: absolute;
-    width: 130px;
-    height: 110px;
-    background-image: url('./img/car.png');
+    width: 160px;
+    height: 140px;
+    background-image: url('./img/car2-removebg-preview\ \(1\).png');
     /* background-color: red; */
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     top: -190px;
-    right: 52%;
+    right: 5245%;
+    /* display: none; */
 }
 
 
@@ -142,10 +142,11 @@ font-family: 'Press Start 2P', cursive;
     align-items: center;
     justify-content: center;
     /* display: none; */
-
+    background-color: brown;
 
 }
-#startbutton, #gameover{
+
+.startbutton, .gameover{
     /* border-color: brown; */
     background: rgb(0,16,36);
     background: linear-gradient(90deg, rgba(0,16,36,1) 0%, rgba(121,9,9,0.342472022988883) 35%, rgba(255,0,121,1) 100%);
@@ -154,15 +155,16 @@ font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: larger;
     position: relative;
-    top: 200px;
+    top: 20px;
     color: white;
+    border-radius: 50%;
 }
-#startbutton:hover, #gameover:hover{
-    background: rgb(0,16,36);
-    background: linear-gradient(90deg, rgba(0,16,36,1) 0%, rgba(121,9,9,1) 35%, rgba(255,0,121,1) 100%);
-    color:  black;
+.startbutton:hover, .gameover:hover{
+    /* background: rgb(0,16,36); */
+    /* background: linear-gradient(90deg, rgba(0,16,36,1) 0%, rgba(121,9,9,1) 35%, rgba(255,0,121,1) 100%); */
+    /* color:  black; */
     font-size: x-large;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }  
 
