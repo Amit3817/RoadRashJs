@@ -239,10 +239,11 @@ var test = setInterval(() => {
 setInterval(() => {
     if (!isGameover) {
         var yu = document.getElementsByClassName("board");
-        yu[0].style.display = "block";
+        yu[0].style.display = "flex";
         console.log("ergdfgsdfg");
-        var iu = document.getElementsByClassName("gameover");
-        iu[0].style.display = "block"
+        // var iu = document.getElementsByClassName("gameover");
+        // iu[0].style.display = "block";
+        // document.getElementById("gameover").style.display="block";
     }
 }, 2);
 
@@ -258,6 +259,17 @@ op.style.animationDuration = 100 - ((bikespeed - 0) * 4) + "s"
 // }
 
 // setTimeout(moveroad, 2500 - 30 * bikespeed);
+function start1()
+{
+    var st=document.getElementById("start");
+    st.style.display="none";
+}
+function restart()
+{
+         yu[0].style.display="none";
+         isGameover=1;
+         console.log(2);
+}
 
 
 
