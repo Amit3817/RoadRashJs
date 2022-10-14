@@ -103,6 +103,7 @@ body {
     width: 130px;
     height: 110px;
     background-image: url('./img/car.png');
+    background-color: red;
     background-size: contain;
     background-repeat: no-repeat;
     top: -190px;
