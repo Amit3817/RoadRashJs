@@ -248,9 +248,16 @@ setInterval(() => {
 
 
 setInterval(() => {
-    var op = document.getElementsByClassName("road")
-op.style.animationDuration = "1s"
-}, 2000);
+    var op = document.getElementById("road")
+op.style.animationDuration = 100 - ((bikespeed - 0) * 4) + "s"
+},2);
+
+// function moveroad() {
+//      var op = document.getElementById("road")
+// op.style.animationDuration = "50s"
+// }
+
+// setTimeout(moveroad, 2500 - 30 * bikespeed);
 
 
 
