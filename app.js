@@ -137,14 +137,14 @@ var movecars = setInterval(() => {
         // console.log(carright);
         // console.log(car.style.top);
         // bike.style.right = 380+"px"
-        if ((carbtm > 45 && carbtm < 90) && (car.style.left == "350px")&&(bikeright>550&&bikeright<590)) {
+        if ((carbtm > 45 && carbtm < 90) && (car.style.left == "350px")&&(bikeright>520&&bikeright<590)) {
             // console.log(car.style.bottom);
             e++;
             var ii = document.getElementById("test")
             ii.innerHTML = (e);
             isGameover = 0;
         }
-        else if ((carbtm > 45 && carbtm < 90) && (car.style.left == "420px")&&(bikeright>490&&bikeright<530) ) {
+        else if ((carbtm > 45 && carbtm < 90) && (car.style.left == "420px")&&(bikeright>470&&bikeright<530) ) {
             // console.log(car.style.bottom);
             e++;
             var ii = document.getElementById("test")
@@ -258,10 +258,4 @@ op.style.animationDuration = 100 - ((bikespeed - 0) * 4) + "s"
 // }
 
 // setTimeout(moveroad, 2500 - 30 * bikespeed);
-
-
-
-
-
-
 
